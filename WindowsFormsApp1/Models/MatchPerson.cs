@@ -25,12 +25,21 @@ namespace WindowsFormsApp1.Models
         public virtual Person Person { get; set; }
 
         public Result MatchResult { get; set; }
+        [NotMapped]
+        static readonly TableTennisModel context = new TableTennisModel();
 
         public MatchPerson(int matchId, int personId, int result)
         {
             MatchId = matchId;
             PersonId = personId;
             MatchResult = (Result)result;
+
+        }
+
+        public void Save()
+        {
+            context.MatchPeople.Add(this);
+            context.SaveChanges();
         }
     }
 }

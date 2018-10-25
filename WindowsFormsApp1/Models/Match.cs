@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,17 +15,50 @@ namespace WindowsFormsApp1.Models
         public int MatchId { get; set; }
         public int? WinningScore { get; set; }
         public int? LosingScore { get; set; }
+        public List<Person> People = new List<Person>();
+        [NotMapped]
+        static readonly TableTennisModel context = new TableTennisModel();
 
         public virtual ICollection<MatchPerson> MatchPeople { get; set; }
-        public Match()
-        {
 
+        public Match(List<string> names, string winningScore = null, string losingScore = null)
+        {
+            Save();
+            foreach (string name in names)
+            {
+                Person person = new Person(name);
+                People.Add(person);
+                person.SetResult(names);                
+                MatchPerson matchPerson = new MatchPerson(MatchId, person.PersonId, person.Result);
+                matchPerson.Save();
+            }
+            if (winningScore != null && losingScore != null)
+            {
+                WinningScore = Int32.Parse(winningScore);
+                LosingScore = Int32.Parse(losingScore);
+            }
         }
 
-        public Match(int winningScore, int losingScore)
+        public void Save()
         {
-            WinningScore = winningScore;
-            LosingScore = losingScore;
+            context.Matches.Add(this);
+            context.SaveChanges();
+        }
+     
+        Team GetTeam(int result)
+        {
+            Team team = new Team();
+            var list = People.Where(x => x.Result == result).ToList();
+            foreach (Person person in list)
+            {
+                team.AddPlayer(person, person.Rating());
+            }
+            return team;
+        }
+
+        public IEnumerable<IDictionary<Player,Rating>> GetTeams()
+        {
+            return Teams.Concat(GetTeam(0),GetTeam(1));
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +25,9 @@ namespace WindowsFormsApp1.Models
         public Rating OldRating;
         [NotMapped]
         static TableTennisModel context = new TableTennisModel();
-
         public virtual ICollection<MatchPerson> MatchPeople { get; set; }
+        [NotMapped]
+        public int Result;
         public Person() : base(0)
         {
 
@@ -66,12 +68,34 @@ namespace WindowsFormsApp1.Models
 
         public void Save()
         {
-            context.Entry(this).State = System.Data.Entity.EntityState.Modified;
+            var local = context.Set<Person>()
+                            .Local
+                            .FirstOrDefault(f => f.Name == Name);
+            if (local != null)
+            {
+                context.Entry(local).State = EntityState.Detached;
+            }
+            context.Entry(this).State = EntityState.Modified;
             context.SaveChanges();
         }
         public Rating Rating()
         {
             return new Rating(Mean, StandardDeviation);
         }
-    }
+
+        public void SetResult(List<string> names)
+        {
+            //Relying on order of textbox input to determine who wins/loses
+            int index = names.IndexOf(Name);
+            if (index > 1 || (index == 1 && names.Count == 2))
+            {
+                Result = 0;
+            }
+            else
+            {
+                Result = 1;
+            }
+            }
+        }          
 }
+
