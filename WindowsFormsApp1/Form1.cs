@@ -98,11 +98,87 @@ namespace WindowsFormsApp1
             }
         }
 
-        
+        public string NewRating1
+        {
+            get
+            {
+                return txtNewRating1.Text;
+            }
+            set
+            {
+                txtNewRating1.Text = value;
+            }
+        }
+        public string NewRating2
+        {
+            get
+            {
+                return txtNewRating2.Text;
+            }
+            set
+            {
+                txtNewRating2.Text = value;
+            }
+        }
+        public string NewRating3
+        {
+            get
+            {
+                return txtNewRating3.Text;
+            }
+            set
+            {
+                txtNewRating3.Text = value;
+            }
+        }
+        public string NewRating4
+        {
+            get
+            {
+                return txtNewRating4.Text;
+            }
+            set
+            {
+                txtNewRating4.Text = value;
+            }
+        }
+
+        public List<string> SettingsText
+        {
+            get
+            {
+                return new List<string> { txtInitialMean.Text, txtDrawProbability.Text };
+            }
+            set
+            {
+                SettingsText = value;
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             PersonPresenter presenter = new PersonPresenter(this);
             presenter.CalculateRatingChange();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtInitialMean_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

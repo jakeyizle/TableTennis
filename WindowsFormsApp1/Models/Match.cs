@@ -18,15 +18,17 @@ namespace WindowsFormsApp1.Models
         public List<Person> People = new List<Person>();
         [NotMapped]
         static readonly TableTennisModel context = new TableTennisModel();
+        [NotMapped]
+        public GameInfo GameInfo;
 
         public virtual ICollection<MatchPerson> MatchPeople { get; set; }
 
-        public Match(List<string> names, string winningScore = null, string losingScore = null)
+        public Match(List<string> names, GameInfo gameInfo, string winningScore = null, string losingScore = null)
         {
             Save();
             foreach (string name in names)
             {
-                Person person = new Person(name);
+                Person person = new Person(name, gameInfo);
                 People.Add(person);
                 person.SetResult(names);                
                 MatchPerson matchPerson = new MatchPerson(MatchId, person.PersonId, person.Result);
@@ -45,7 +47,7 @@ namespace WindowsFormsApp1.Models
             context.SaveChanges();
         }
      
-        Team GetTeam(int result)
+        Team GetTeam(Result result)
         {
             Team team = new Team();
             var list = People.Where(x => x.Result == result).ToList();
@@ -58,7 +60,7 @@ namespace WindowsFormsApp1.Models
 
         public IEnumerable<IDictionary<Player,Rating>> GetTeams()
         {
-            return Teams.Concat(GetTeam(0),GetTeam(1));
+            return Teams.Concat(GetTeam((Result)1), GetTeam(0));
         }
     }
 }

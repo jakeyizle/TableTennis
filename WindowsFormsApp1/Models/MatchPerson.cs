@@ -8,14 +8,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WindowsFormsApp1.Models
 {
+    public enum Result
+    {
+        Loss,
+        Win
+    }
+
     public class MatchPerson
     {
-        public enum Result
-        {
-            Loss,
-            Win
-        }
-
         [Key, Column(Order = 0)]
         public int MatchId { get; set;}
         [Key, Column(Order = 1)]
@@ -28,12 +28,11 @@ namespace WindowsFormsApp1.Models
         [NotMapped]
         static readonly TableTennisModel context = new TableTennisModel();
 
-        public MatchPerson(int matchId, int personId, int result)
+        public MatchPerson(int matchId, int personId, Result result)
         {
             MatchId = matchId;
             PersonId = personId;
-            MatchResult = (Result)result;
-
+            MatchResult = result;
         }
 
         public void Save()

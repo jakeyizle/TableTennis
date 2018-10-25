@@ -24,36 +24,30 @@ namespace WindowsFormsApp1.Models
         [NotMapped]
         public Rating OldRating;
         [NotMapped]
-        static TableTennisModel context = new TableTennisModel();
         public virtual ICollection<MatchPerson> MatchPeople { get; set; }
         [NotMapped]
-        public int Result;
+        public Result Result;
         public Person() : base(0)
         {
 
         }
 
-        public Person(string name) : base(name)
+        public Person(string name, GameInfo gameInfo) : base(name)
         {
             Name = name;
-            var people = context.People.Where(x => x.Name == Name).ToList();
+            var person = Get();
            
-            if (people.Any())
+            if (person != null)
             {
-                GamesPlayed = people[0].GamesPlayed;
-                WinPercentage = people[0].WinPercentage;
-                Mean = people[0].Mean;
-                StandardDeviation = people[0].StandardDeviation;
-                PersonId = people[0].PersonId;
+                Mean = person.Mean;
+                StandardDeviation = person.StandardDeviation;
+                PersonId = person.PersonId;
             }
             else
             {
-                GamesPlayed = 0;
-                WinPercentage = 0;
-                Mean = 25;
-                StandardDeviation = Mean / 3;
-                context.People.Add(this);
-                context.SaveChanges();
+                Mean = gameInfo.InitialMean;
+                StandardDeviation = gameInfo.InitialStandardDeviation;
+                Save();
             }
         }
 
@@ -68,16 +62,23 @@ namespace WindowsFormsApp1.Models
 
         public void Save()
         {
-            var local = context.Set<Person>()
-                            .Local
-                            .FirstOrDefault(f => f.Name == Name);
-            if (local != null)
+            using (var context = new TableTennisModel())
             {
-                context.Entry(local).State = EntityState.Detached;
+                context.Entry(this).State = PersonId == 0 ?
+                                       EntityState.Added :
+                                       EntityState.Modified;
+                context.SaveChanges();
             }
-            context.Entry(this).State = EntityState.Modified;
-            context.SaveChanges();
         }
+
+        public Person Get()
+        {
+            using (var context = new TableTennisModel())
+            {
+                return context.People.SingleOrDefault(x => x.Name == Name);
+            }
+        }
+
         public Rating Rating()
         {
             return new Rating(Mean, StandardDeviation);
@@ -93,9 +94,9 @@ namespace WindowsFormsApp1.Models
             }
             else
             {
-                Result = 1;
+                Result = (Result)1;
             }
-            }
-        }          
+        }
+    }          
 }
 

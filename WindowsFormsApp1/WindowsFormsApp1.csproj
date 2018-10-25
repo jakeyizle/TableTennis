@@ -196,5 +196,8 @@
     <Content Include="License.txt" />
     <Content Include="README.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
