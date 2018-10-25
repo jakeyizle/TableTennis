@@ -31,6 +31,11 @@ namespace WindowsFormsApp1.Models
 
         public Match(List<string> names, GameInfo gameInfo, List<string> scoreText)
         {
+            if (scoreText.Any())
+            {
+                WinningScore = Int32.Parse(scoreText[0]);
+                LosingScore = Int32.Parse(scoreText[1]);
+            }
             Save();
             foreach (string name in names)
             {
@@ -39,11 +44,6 @@ namespace WindowsFormsApp1.Models
                 person.SetResult(names);                
                 MatchPerson matchPerson = new MatchPerson(MatchId, person.PersonId, person.Result);
                 matchPerson.Save();
-            }
-            if (scoreText.Any())
-            {            
-                WinningScore = Int32.Parse(scoreText[0]);
-                LosingScore = Int32.Parse(scoreText[1]);
             }
         }
 
