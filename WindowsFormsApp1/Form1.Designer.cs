@@ -66,8 +66,8 @@
             this.txtNewRating2 = new System.Windows.Forms.TextBox();
             this.txtNewRating1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -183,7 +183,7 @@
             // 
             // txtScoreChangeWin2
             // 
-            this.txtScoreChangeWin2.Location = new System.Drawing.Point(548, 70);
+            this.txtScoreChangeWin2.Location = new System.Drawing.Point(525, 97);
             this.txtScoreChangeWin2.Name = "txtScoreChangeWin2";
             this.txtScoreChangeWin2.ReadOnly = true;
             this.txtScoreChangeWin2.Size = new System.Drawing.Size(100, 20);
@@ -191,7 +191,7 @@
             // 
             // txtScoreChangeWin1
             // 
-            this.txtScoreChangeWin1.Location = new System.Drawing.Point(548, 41);
+            this.txtScoreChangeWin1.Location = new System.Drawing.Point(525, 68);
             this.txtScoreChangeWin1.Name = "txtScoreChangeWin1";
             this.txtScoreChangeWin1.ReadOnly = true;
             this.txtScoreChangeWin1.Size = new System.Drawing.Size(100, 20);
@@ -200,7 +200,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(557, 11);
+            this.label7.Location = new System.Drawing.Point(534, 38);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 13);
             this.label7.TabIndex = 14;
@@ -209,7 +209,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(442, 11);
+            this.label8.Location = new System.Drawing.Point(419, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 13);
             this.label8.TabIndex = 13;
@@ -217,7 +217,7 @@
             // 
             // txtScoreChangeLose2
             // 
-            this.txtScoreChangeLose2.Location = new System.Drawing.Point(548, 193);
+            this.txtScoreChangeLose2.Location = new System.Drawing.Point(525, 220);
             this.txtScoreChangeLose2.Name = "txtScoreChangeLose2";
             this.txtScoreChangeLose2.ReadOnly = true;
             this.txtScoreChangeLose2.Size = new System.Drawing.Size(100, 20);
@@ -225,7 +225,7 @@
             // 
             // txtScoreChangeLose1
             // 
-            this.txtScoreChangeLose1.Location = new System.Drawing.Point(548, 164);
+            this.txtScoreChangeLose1.Location = new System.Drawing.Point(525, 191);
             this.txtScoreChangeLose1.Name = "txtScoreChangeLose1";
             this.txtScoreChangeLose1.ReadOnly = true;
             this.txtScoreChangeLose1.Size = new System.Drawing.Size(100, 20);
@@ -244,7 +244,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(667, 11);
+            this.label10.Location = new System.Drawing.Point(644, 38);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 17;
@@ -359,7 +359,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(670, 193);
+            this.textBox5.Location = new System.Drawing.Point(647, 220);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(100, 20);
@@ -367,7 +367,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(670, 164);
+            this.textBox6.Location = new System.Drawing.Point(647, 191);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(100, 20);
@@ -375,7 +375,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(670, 70);
+            this.textBox7.Location = new System.Drawing.Point(647, 97);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(100, 20);
@@ -383,7 +383,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(670, 41);
+            this.textBox8.Location = new System.Drawing.Point(647, 68);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(100, 20);
@@ -391,7 +391,7 @@
             // 
             // txtNewRating4
             // 
-            this.txtNewRating4.Location = new System.Drawing.Point(429, 193);
+            this.txtNewRating4.Location = new System.Drawing.Point(406, 220);
             this.txtNewRating4.Name = "txtNewRating4";
             this.txtNewRating4.ReadOnly = true;
             this.txtNewRating4.Size = new System.Drawing.Size(100, 20);
@@ -399,7 +399,7 @@
             // 
             // txtNewRating3
             // 
-            this.txtNewRating3.Location = new System.Drawing.Point(429, 164);
+            this.txtNewRating3.Location = new System.Drawing.Point(406, 191);
             this.txtNewRating3.Name = "txtNewRating3";
             this.txtNewRating3.ReadOnly = true;
             this.txtNewRating3.Size = new System.Drawing.Size(100, 20);
@@ -407,7 +407,7 @@
             // 
             // txtNewRating2
             // 
-            this.txtNewRating2.Location = new System.Drawing.Point(429, 70);
+            this.txtNewRating2.Location = new System.Drawing.Point(406, 97);
             this.txtNewRating2.Name = "txtNewRating2";
             this.txtNewRating2.ReadOnly = true;
             this.txtNewRating2.Size = new System.Drawing.Size(100, 20);
@@ -415,7 +415,7 @@
             // 
             // txtNewRating1
             // 
-            this.txtNewRating1.Location = new System.Drawing.Point(429, 41);
+            this.txtNewRating1.Location = new System.Drawing.Point(406, 68);
             this.txtNewRating1.Name = "txtNewRating1";
             this.txtNewRating1.ReadOnly = true;
             this.txtNewRating1.Size = new System.Drawing.Size(100, 20);
@@ -433,15 +433,6 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(190, 26);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(647, 407);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(55, 47);
@@ -451,6 +442,15 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(190, 26);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(647, 407);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Form1
             // 
