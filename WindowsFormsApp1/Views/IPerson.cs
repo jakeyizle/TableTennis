@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Views
 {
@@ -21,7 +22,8 @@ namespace WindowsFormsApp1.Views
         string NewRating2 { get; set; }
         string NewRating3 { get; set; }
         string NewRating4 { get; set; }
-
         void load_tableData(DataTable table = null);
+        List<string> ElevenPointStats { get; set; }
+        List<String> TwentyOnePointStats { get; set; }
     }
 }

@@ -9,12 +9,18 @@ using Moserware.Skills;
 
 namespace WindowsFormsApp1.Models
 {
+    public enum PointType
+    {
+        ElevenPoints,
+        TwentyOnePoints,
+    }
     public class Match
     {
         [Key]
         public int MatchId { get; set; }
         public int? WinningScore { get; set; }
         public int? LosingScore { get; set; }
+        public PointType PointType { get; set; }
         public List<Person> People = new List<Person>();
         [NotMapped]
         static readonly TableTennisModel context = new TableTennisModel();

@@ -142,7 +142,17 @@ namespace WindowsFormsApp1
                 txtNewRating4.Text = value;
             }
         }
-
+        public string StatPlayerText
+        {
+            get
+            {
+                return comboBox1.Text;
+            }
+            set
+            {
+                comboBox1.Text = value;
+            }
+        }
         public List<string> SettingsText
         {
             get
@@ -155,6 +165,54 @@ namespace WindowsFormsApp1
             }
         }
 
+        public List<string> ElevenPointStats
+        {
+            get
+            {
+                ElevenPointStats[0] = txtOverallRecord11.Text;
+                ElevenPointStats[1] = txtBestPlayerRecord11.Text;
+                ElevenPointStats[2] = txtWorstPlayerRecord11.Text;
+                ElevenPointStats[3] = txtPoints11.Text;
+                ElevenPointStats[4] = txtPointsAgainst11.Text;
+                ElevenPointStats[5] = txtPointsAgainstWin11.Text;
+                ElevenPointStats[6] = txtPointsLose11.Text;
+                return ElevenPointStats;
+            }
+            set
+            {
+               txtOverallRecord11.Text = value[0];
+               txtBestPlayerRecord11.Text = value[1];
+               txtWorstPlayerRecord11.Text = value[2]; 
+               txtPoints11.Text = value[3]; 
+               txtPointsAgainst11.Text = value[4]; 
+               txtPointsAgainstWin11.Text = value[5]; 
+               txtPointsLose11.Text = value[6];
+            }
+        }
+        public List<string> TwentyOnePointStats
+        {
+            get
+            {
+                TwentyOnePointStats[0] = txtOverallRecord21.Text;
+                TwentyOnePointStats[1] = txtBestPlayerRecord21.Text;
+                TwentyOnePointStats[2] = txtWorstPlayerRecord21.Text;
+                TwentyOnePointStats[3] = txtPoints21.Text;
+                TwentyOnePointStats[4] = txtPointsAgainst21.Text;
+                TwentyOnePointStats[5] = txtPointsAgainstWin21.Text;
+                TwentyOnePointStats[6] = txtPointsLose21.Text;
+                return TwentyOnePointStats;
+            }
+            set
+            {
+                txtOverallRecord21.Text = value[0];
+                txtBestPlayerRecord21.Text = value[1];
+                txtWorstPlayerRecord21.Text = value[2];
+                txtPoints21.Text = value[3];
+                txtPointsAgainst21.Text = value[4];
+                txtPointsAgainstWin21.Text = value[5];
+                txtPointsLose21.Text = value[6];
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -188,7 +246,6 @@ namespace WindowsFormsApp1
         }
 
 
-
         private void button2_Click(object sender, EventArgs e)
         {
             PersonPresenter presenter = new PersonPresenter(this);
@@ -201,6 +258,59 @@ namespace WindowsFormsApp1
             binding.DataSource = table;
             dataGridView1.DataSource = binding;
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PersonPresenter presenter = new PersonPresenter(this);
+            presenter.load_personStats();
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'tableTennisRankingsDataSet.People' table. You can move, or remove it, as needed.
+            this.peopleTableAdapter.Fill(this.tableTennisRankingsDataSet.People);
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox17_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

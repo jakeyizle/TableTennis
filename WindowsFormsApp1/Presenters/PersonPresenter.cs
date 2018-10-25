@@ -79,5 +79,10 @@ namespace WindowsFormsApp1.Presenters
                 personView.load_tableData(table);
             }
         }
+
+        public void load_personStats()
+        {
+
+        }
     }
 }
