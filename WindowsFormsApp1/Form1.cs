@@ -155,6 +155,7 @@ namespace WindowsFormsApp1
             }
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             PersonPresenter presenter = new PersonPresenter(this);
@@ -179,6 +180,27 @@ namespace WindowsFormsApp1
         private void txtInitialMean_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PersonPresenter presenter = new PersonPresenter(this);
+            presenter.load_tableData();
+        }
+
+        public void load_tableData(DataTable table)
+        {
+            BindingSource binding = new BindingSource();
+            binding.DataSource = table;
+            dataGridView1.DataSource = binding;
+            dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
     }
 }

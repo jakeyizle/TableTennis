@@ -27,6 +27,29 @@ namespace WindowsFormsApp1.Models
         public virtual ICollection<MatchPerson> MatchPeople { get; set; }
         [NotMapped]
         public Result Result;
+        [NotMapped]
+        public Rating Rating
+        {
+            get
+            {
+                return new Rating(Mean, StandardDeviation);
+            }
+            set
+            {
+                Mean = value.Mean;
+                StandardDeviation = value.StandardDeviation;
+            }
+        }
+        [NotMapped]
+        public double ConservativeRating
+        {
+            get
+            {
+                return Math.Round(Rating.ConservativeRating, 4);
+            }
+        }
+        public int Rank;
+
         public Person() : base(0)
         {
 
@@ -53,11 +76,11 @@ namespace WindowsFormsApp1.Models
 
         public double UpdateRating(IDictionary<Player,Rating> dict)
         {
-            OldRating = Rating();
+            OldRating = Rating;
             Mean = dict[this].Mean;
             StandardDeviation = dict[this].StandardDeviation;
             Save();
-            return Rating().ConservativeRating - OldRating.ConservativeRating;
+            return ConservativeRating - OldRating.ConservativeRating;
         }
 
         public void Save()
@@ -77,11 +100,6 @@ namespace WindowsFormsApp1.Models
             {
                 return context.People.SingleOrDefault(x => x.Name == Name);
             }
-        }
-
-        public Rating Rating()
-        {
-            return new Rating(Mean, StandardDeviation);
         }
 
         public void SetResult(List<string> names)

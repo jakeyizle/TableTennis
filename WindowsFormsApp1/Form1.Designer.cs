@@ -52,22 +52,26 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txtNewRating4 = new System.Windows.Forms.TextBox();
-            this.txtNewRating3 = new System.Windows.Forms.TextBox();
-            this.txtNewRating2 = new System.Windows.Forms.TextBox();
-            this.txtNewRating1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtDrawProbability = new System.Windows.Forms.TextBox();
+            this.txtInitialMean = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.txtInitialMean = new System.Windows.Forms.TextBox();
-            this.txtDrawProbability = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.txtNewRating4 = new System.Windows.Forms.TextBox();
+            this.txtNewRating3 = new System.Windows.Forms.TextBox();
+            this.txtNewRating2 = new System.Windows.Forms.TextBox();
+            this.txtNewRating1 = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -311,47 +315,47 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // label14
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(878, 508);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(28, 379);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(280, 13);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Changing these settings requires full recalculation of ranks";
             // 
-            // txtNewRating4
+            // label13
             // 
-            this.txtNewRating4.Location = new System.Drawing.Point(429, 193);
-            this.txtNewRating4.Name = "txtNewRating4";
-            this.txtNewRating4.ReadOnly = true;
-            this.txtNewRating4.Size = new System.Drawing.Size(100, 20);
-            this.txtNewRating4.TabIndex = 25;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(42, 455);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 13);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Draw Probability";
             // 
-            // txtNewRating3
+            // label12
             // 
-            this.txtNewRating3.Location = new System.Drawing.Point(429, 164);
-            this.txtNewRating3.Name = "txtNewRating3";
-            this.txtNewRating3.ReadOnly = true;
-            this.txtNewRating3.Size = new System.Drawing.Size(100, 20);
-            this.txtNewRating3.TabIndex = 24;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(45, 417);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 13);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Initial Mean";
             // 
-            // txtNewRating2
+            // txtDrawProbability
             // 
-            this.txtNewRating2.Location = new System.Drawing.Point(429, 70);
-            this.txtNewRating2.Name = "txtNewRating2";
-            this.txtNewRating2.ReadOnly = true;
-            this.txtNewRating2.Size = new System.Drawing.Size(100, 20);
-            this.txtNewRating2.TabIndex = 23;
+            this.txtDrawProbability.Location = new System.Drawing.Point(131, 452);
+            this.txtDrawProbability.Name = "txtDrawProbability";
+            this.txtDrawProbability.Size = new System.Drawing.Size(100, 20);
+            this.txtDrawProbability.TabIndex = 31;
             // 
-            // txtNewRating1
+            // txtInitialMean
             // 
-            this.txtNewRating1.Location = new System.Drawing.Point(429, 41);
-            this.txtNewRating1.Name = "txtNewRating1";
-            this.txtNewRating1.ReadOnly = true;
-            this.txtNewRating1.Size = new System.Drawing.Size(100, 20);
-            this.txtNewRating1.TabIndex = 22;
+            this.txtInitialMean.Location = new System.Drawing.Point(131, 414);
+            this.txtInitialMean.Name = "txtInitialMean";
+            this.txtInitialMean.Size = new System.Drawing.Size(100, 20);
+            this.txtInitialMean.TabIndex = 30;
+            this.txtInitialMean.TextChanged += new System.EventHandler(this.txtInitialMean_TextChanged);
             // 
             // textBox5
             // 
@@ -385,48 +389,68 @@
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 26;
             // 
-            // txtInitialMean
+            // txtNewRating4
             // 
-            this.txtInitialMean.Location = new System.Drawing.Point(131, 414);
-            this.txtInitialMean.Name = "txtInitialMean";
-            this.txtInitialMean.Size = new System.Drawing.Size(100, 20);
-            this.txtInitialMean.TabIndex = 30;
-            this.txtInitialMean.TextChanged += new System.EventHandler(this.txtInitialMean_TextChanged);
-
+            this.txtNewRating4.Location = new System.Drawing.Point(429, 193);
+            this.txtNewRating4.Name = "txtNewRating4";
+            this.txtNewRating4.ReadOnly = true;
+            this.txtNewRating4.Size = new System.Drawing.Size(100, 20);
+            this.txtNewRating4.TabIndex = 25;
             // 
-            // txtDrawProbability
+            // txtNewRating3
             // 
-            this.txtDrawProbability.Location = new System.Drawing.Point(131, 452);
-            this.txtDrawProbability.Name = "txtDrawProbability";
-            this.txtDrawProbability.Size = new System.Drawing.Size(100, 20);
-            this.txtDrawProbability.TabIndex = 31;
+            this.txtNewRating3.Location = new System.Drawing.Point(429, 164);
+            this.txtNewRating3.Name = "txtNewRating3";
+            this.txtNewRating3.ReadOnly = true;
+            this.txtNewRating3.Size = new System.Drawing.Size(100, 20);
+            this.txtNewRating3.TabIndex = 24;
             // 
-            // label12
+            // txtNewRating2
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(45, 417);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 13);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "Initial Mean";
+            this.txtNewRating2.Location = new System.Drawing.Point(429, 70);
+            this.txtNewRating2.Name = "txtNewRating2";
+            this.txtNewRating2.ReadOnly = true;
+            this.txtNewRating2.Size = new System.Drawing.Size(100, 20);
+            this.txtNewRating2.TabIndex = 23;
             // 
-            // label13
+            // txtNewRating1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(42, 455);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 13);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "Draw Probability";
+            this.txtNewRating1.Location = new System.Drawing.Point(429, 41);
+            this.txtNewRating1.Name = "txtNewRating1";
+            this.txtNewRating1.ReadOnly = true;
+            this.txtNewRating1.Size = new System.Drawing.Size(100, 20);
+            this.txtNewRating1.TabIndex = 22;
             // 
-            // label14
+            // tabPage2
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(28, 379);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(280, 13);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Changing these settings requires full recalculation of ranks";
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(878, 508);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(190, 26);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(647, 407);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(55, 47);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -439,6 +463,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,6 +509,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtDrawProbability;
         private System.Windows.Forms.TextBox txtInitialMean;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

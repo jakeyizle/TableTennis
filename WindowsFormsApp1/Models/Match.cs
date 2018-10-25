@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.Models
 
         public virtual ICollection<MatchPerson> MatchPeople { get; set; }
 
-        public Match(List<string> names, GameInfo gameInfo, string winningScore = null, string losingScore = null)
+        public Match(List<string> names, GameInfo gameInfo, List<string> scoreText)
         {
             Save();
             foreach (string name in names)
@@ -34,10 +34,10 @@ namespace WindowsFormsApp1.Models
                 MatchPerson matchPerson = new MatchPerson(MatchId, person.PersonId, person.Result);
                 matchPerson.Save();
             }
-            if (winningScore != null && losingScore != null)
-            {
-                WinningScore = Int32.Parse(winningScore);
-                LosingScore = Int32.Parse(losingScore);
+            if (scoreText.Any())
+            {            
+                WinningScore = Int32.Parse(scoreText[0]);
+                LosingScore = Int32.Parse(scoreText[1]);
             }
         }
 
@@ -53,7 +53,7 @@ namespace WindowsFormsApp1.Models
             var list = People.Where(x => x.Result == result).ToList();
             foreach (Person person in list)
             {
-                team.AddPlayer(person, person.Rating());
+                team.AddPlayer(person, person.Rating);
             }
             return team;
         }

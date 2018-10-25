@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,5 +21,7 @@ namespace WindowsFormsApp1.Views
         string NewRating2 { get; set; }
         string NewRating3 { get; set; }
         string NewRating4 { get; set; }
+
+        void load_tableData(DataTable table = null);
     }
 }

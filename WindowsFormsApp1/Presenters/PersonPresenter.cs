@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using WindowsFormsApp1.Views;
 using WindowsFormsApp1.Models;
 using Moserware.Skills;
+using System.Data;
+using FastMember;
+
 namespace WindowsFormsApp1.Presenters
 {
     public class PersonPresenter
@@ -25,7 +28,8 @@ namespace WindowsFormsApp1.Presenters
             var settings = personView.SettingsText.Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
 
             var gameInfo = GameInfo.DefaultGameInfo;
-            Match match = new Match(nameList, gameInfo, personView.ScoreText[0], personView.ScoreText[1]);
+            Match match = new Match(nameList, gameInfo, personView.ScoreText.Where(x => !string.IsNullOrWhiteSpace(x)).ToList());
+            
 
             var newSkills = TrueSkillCalculator.CalculateNewRatings(gameInfo, match.GetTeams(), 1, 2);
 
@@ -36,8 +40,8 @@ namespace WindowsFormsApp1.Presenters
                 personView.RatingChange1 = Math.Round(match.People[0].UpdateRating(newSkills), 3).ToString();
                 personView.RatingChange3 = Math.Round(match.People[1].UpdateRating(newSkills), 3).ToString();
 
-                personView.NewRating1 = Math.Round(match.People[0].Rating().ConservativeRating, 3).ToString();
-                personView.NewRating3 = Math.Round(match.People[1].Rating().ConservativeRating, 3).ToString();
+                personView.NewRating1 = Math.Round(match.People[0].Rating.ConservativeRating, 3).ToString();
+                personView.NewRating3 = Math.Round(match.People[1].Rating.ConservativeRating, 3).ToString();
             }
             else
             {
@@ -46,12 +50,34 @@ namespace WindowsFormsApp1.Presenters
                 personView.RatingChange3 = Math.Round(match.People[2].UpdateRating(newSkills), 3).ToString();
                 personView.RatingChange4 = Math.Round(match.People[3].UpdateRating(newSkills), 3).ToString();
 
-                personView.NewRating1 = Math.Round(match.People[0].Rating().ConservativeRating, 3).ToString();
-                personView.NewRating2 = Math.Round(match.People[1].Rating().ConservativeRating, 3).ToString();
-                personView.NewRating3 = Math.Round(match.People[2].Rating().ConservativeRating, 3).ToString();
-                personView.NewRating4 = Math.Round(match.People[3].Rating().ConservativeRating, 3).ToString();
+                personView.NewRating1 = Math.Round(match.People[0].Rating.ConservativeRating, 3).ToString();
+                personView.NewRating2 = Math.Round(match.People[1].Rating.ConservativeRating, 3).ToString();
+                personView.NewRating3 = Math.Round(match.People[2].Rating.ConservativeRating, 3).ToString();
+                personView.NewRating4 = Math.Round(match.People[3].Rating.ConservativeRating, 3).ToString();
             }
+        }
 
+        public void load_tableData()
+        {
+            using (var context = new TableTennisModel())
+            {
+                var people = context.People.ToList();
+                people = people.OrderByDescending(x => x.ConservativeRating).ToList();
+                people.ToList().ForEach(x =>
+                {
+                    x.Rank = people.IndexOf(x) + 1;
+                    x.GamesPlayed = context.MatchPeople.Where(y => y.PersonId == x.PersonId).Count();
+                    var matchesWon = context.MatchPeople.Where(z => z.PersonId == x.PersonId && z.MatchResult == Result.Win).Count();
+                    x.WinPercentage = Math.Round((double)matchesWon / x.GamesPlayed * 100,3);
+                });
+
+                DataTable table = new DataTable();
+                using (var reader = ObjectReader.Create(people, "Rank", "ConservativeRating", "Name", "GamesPlayed", "WinPercentage"))
+                {
+                    table.Load(reader);
+                }
+                personView.load_tableData(table);
+            }
         }
     }
 }
