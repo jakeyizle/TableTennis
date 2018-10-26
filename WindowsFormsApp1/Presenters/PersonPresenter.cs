@@ -82,7 +82,26 @@ namespace WindowsFormsApp1.Presenters
 
         public void load_personStats()
         {
-
+            string name = personView.StatPlayerText;
+            Statistic statistic = new Statistic(name);
+            List<string> elevenList = new List<string>
+            {             
+                statistic.Record(PointType.ElevenPoints),
+                statistic.BestOrWorstRecord(Result.Win, PointType.ElevenPoints),
+                statistic.BestOrWorstRecord(Result.Loss, PointType.ElevenPoints),
+                statistic.AveragePointsForOrAgainst(Result.Win, PointType.ElevenPoints),
+                statistic.AveragePointsForOrAgainst(Result.Loss, PointType.ElevenPoints)
+            };
+            List<string> twentyOneList = new List<string>
+            {
+                statistic.Record(PointType.TwentyOnePoints),
+                statistic.BestOrWorstRecord(Result.Win, PointType.TwentyOnePoints),
+                statistic.BestOrWorstRecord(Result.Loss, PointType.TwentyOnePoints),
+                statistic.AveragePointsForOrAgainst(Result.Win, PointType.TwentyOnePoints),
+                statistic.AveragePointsForOrAgainst(Result.Loss, PointType.TwentyOnePoints)
+            };
+            personView.ElevenPointStats = elevenList;
+            personView.TwentyOnePointStats = twentyOneList;
         }
     }
 }

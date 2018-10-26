@@ -23,6 +23,7 @@ namespace WindowsFormsApp1.Views
         string NewRating3 { get; set; }
         string NewRating4 { get; set; }
         void load_tableData(DataTable table = null);
+        string StatPlayerText { get; set; }
         List<string> ElevenPointStats { get; set; }
         List<String> TwentyOnePointStats { get; set; }
     }

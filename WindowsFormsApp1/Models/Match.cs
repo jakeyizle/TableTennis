@@ -29,12 +29,24 @@ namespace WindowsFormsApp1.Models
 
         public virtual ICollection<MatchPerson> MatchPeople { get; set; }
 
+        public Match()
+        {
+
+        }
         public Match(List<string> names, GameInfo gameInfo, List<string> scoreText)
         {
             if (scoreText.Any())
             {
                 WinningScore = Int32.Parse(scoreText[0]);
                 LosingScore = Int32.Parse(scoreText[1]);
+                if (WinningScore == 21)
+                {
+                    PointType = PointType.TwentyOnePoints;
+                }
+                else
+                {
+                    PointType = PointType.ElevenPoints;
+                }
             }
             Save();
             foreach (string name in names)

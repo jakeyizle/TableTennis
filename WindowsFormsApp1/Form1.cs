@@ -174,8 +174,6 @@ namespace WindowsFormsApp1
                 ElevenPointStats[2] = txtWorstPlayerRecord11.Text;
                 ElevenPointStats[3] = txtPoints11.Text;
                 ElevenPointStats[4] = txtPointsAgainst11.Text;
-                ElevenPointStats[5] = txtPointsAgainstWin11.Text;
-                ElevenPointStats[6] = txtPointsLose11.Text;
                 return ElevenPointStats;
             }
             set
@@ -185,8 +183,6 @@ namespace WindowsFormsApp1
                txtWorstPlayerRecord11.Text = value[2]; 
                txtPoints11.Text = value[3]; 
                txtPointsAgainst11.Text = value[4]; 
-               txtPointsAgainstWin11.Text = value[5]; 
-               txtPointsLose11.Text = value[6];
             }
         }
         public List<string> TwentyOnePointStats
@@ -198,8 +194,6 @@ namespace WindowsFormsApp1
                 TwentyOnePointStats[2] = txtWorstPlayerRecord21.Text;
                 TwentyOnePointStats[3] = txtPoints21.Text;
                 TwentyOnePointStats[4] = txtPointsAgainst21.Text;
-                TwentyOnePointStats[5] = txtPointsAgainstWin21.Text;
-                TwentyOnePointStats[6] = txtPointsLose21.Text;
                 return TwentyOnePointStats;
             }
             set
@@ -209,10 +203,9 @@ namespace WindowsFormsApp1
                 txtWorstPlayerRecord21.Text = value[2];
                 txtPoints21.Text = value[3];
                 txtPointsAgainst21.Text = value[4];
-                txtPointsAgainstWin21.Text = value[5];
-                txtPointsLose21.Text = value[6];
             }
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

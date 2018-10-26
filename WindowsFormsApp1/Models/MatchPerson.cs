@@ -27,7 +27,11 @@ namespace WindowsFormsApp1.Models
         public Result MatchResult { get; set; }
         [NotMapped]
         static readonly TableTennisModel context = new TableTennisModel();
+        
+        public MatchPerson()
+        {
 
+        }
         public MatchPerson(int matchId, int personId, Result result)
         {
             MatchId = matchId;

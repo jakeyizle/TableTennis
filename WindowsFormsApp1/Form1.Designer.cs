@@ -70,41 +70,41 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tableTennisRankingsDataSet = new WindowsFormsApp1.TableTennisRankingsDataSet();
-            this.peopleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.peopleTableAdapter = new WindowsFormsApp1.TableTennisRankingsDataSetTableAdapters.PeopleTableAdapter();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtOverallRecord11 = new System.Windows.Forms.TextBox();
-            this.txtBestPlayerRecord11 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtWorstPlayerRecord11 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtOverallRecord21 = new System.Windows.Forms.TextBox();
-            this.txtBestPlayerRecord21 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtWorstPlayerRecord21 = new System.Windows.Forms.TextBox();
-            this.txtPointsAgainstWin21 = new System.Windows.Forms.TextBox();
-            this.txtPointsAgainstWin11 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtPointsLose11 = new System.Windows.Forms.TextBox();
-            this.txtPointsLose21 = new System.Windows.Forms.TextBox();
             this.txtPointsAgainst11 = new System.Windows.Forms.TextBox();
             this.txtPointsAgainst21 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txtPoints11 = new System.Windows.Forms.TextBox();
             this.txtPoints21 = new System.Windows.Forms.TextBox();
+            this.txtPointsLose11 = new System.Windows.Forms.TextBox();
+            this.txtPointsLose21 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtPointsAgainstWin11 = new System.Windows.Forms.TextBox();
+            this.txtPointsAgainstWin21 = new System.Windows.Forms.TextBox();
+            this.txtWorstPlayerRecord21 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtBestPlayerRecord21 = new System.Windows.Forms.TextBox();
+            this.txtOverallRecord21 = new System.Windows.Forms.TextBox();
+            this.txtWorstPlayerRecord11 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtBestPlayerRecord11 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtOverallRecord11 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.peopleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableTennisRankingsDataSet = new WindowsFormsApp1.TableTennisRankingsDataSet();
+            this.peopleTableAdapter = new WindowsFormsApp1.TableTennisRankingsDataSetTableAdapters.PeopleTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableTennisRankingsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableTennisRankingsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -522,6 +522,215 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
+            // txtPointsAgainst11
+            // 
+            this.txtPointsAgainst11.Location = new System.Drawing.Point(313, 240);
+            this.txtPointsAgainst11.Name = "txtPointsAgainst11";
+            this.txtPointsAgainst11.ReadOnly = true;
+            this.txtPointsAgainst11.Size = new System.Drawing.Size(244, 20);
+            this.txtPointsAgainst11.TabIndex = 24;
+            this.txtPointsAgainst11.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+            // 
+            // txtPointsAgainst21
+            // 
+            this.txtPointsAgainst21.Location = new System.Drawing.Point(605, 240);
+            this.txtPointsAgainst21.Name = "txtPointsAgainst21";
+            this.txtPointsAgainst21.ReadOnly = true;
+            this.txtPointsAgainst21.Size = new System.Drawing.Size(245, 20);
+            this.txtPointsAgainst21.TabIndex = 23;
+            this.txtPointsAgainst21.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(167, 247);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(133, 13);
+            this.label23.TabIndex = 22;
+            this.label23.Text = "Avg Points Scored Against";
+            this.label23.Click += new System.EventHandler(this.label23_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(167, 206);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(95, 13);
+            this.label24.TabIndex = 21;
+            this.label24.Text = "Avg Points Scored";
+            this.label24.Click += new System.EventHandler(this.label24_Click);
+            // 
+            // txtPoints11
+            // 
+            this.txtPoints11.Location = new System.Drawing.Point(313, 199);
+            this.txtPoints11.Name = "txtPoints11";
+            this.txtPoints11.ReadOnly = true;
+            this.txtPoints11.Size = new System.Drawing.Size(244, 20);
+            this.txtPoints11.TabIndex = 20;
+            this.txtPoints11.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
+            // 
+            // txtPoints21
+            // 
+            this.txtPoints21.Location = new System.Drawing.Point(605, 199);
+            this.txtPoints21.Name = "txtPoints21";
+            this.txtPoints21.ReadOnly = true;
+            this.txtPoints21.Size = new System.Drawing.Size(245, 20);
+            this.txtPoints21.TabIndex = 19;
+            this.txtPoints21.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
+            // 
+            // txtPointsLose11
+            // 
+            this.txtPointsLose11.Location = new System.Drawing.Point(313, 323);
+            this.txtPointsLose11.Name = "txtPointsLose11";
+            this.txtPointsLose11.ReadOnly = true;
+            this.txtPointsLose11.Size = new System.Drawing.Size(244, 20);
+            this.txtPointsLose11.TabIndex = 18;
+            // 
+            // txtPointsLose21
+            // 
+            this.txtPointsLose21.Location = new System.Drawing.Point(605, 323);
+            this.txtPointsLose21.Name = "txtPointsLose21";
+            this.txtPointsLose21.ReadOnly = true;
+            this.txtPointsLose21.Size = new System.Drawing.Size(245, 20);
+            this.txtPointsLose21.TabIndex = 17;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(167, 330);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(102, 13);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "Avg Points For Lose";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(167, 289);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(118, 13);
+            this.label21.TabIndex = 15;
+            this.label21.Text = "Avg Points Against Win";
+            // 
+            // txtPointsAgainstWin11
+            // 
+            this.txtPointsAgainstWin11.Location = new System.Drawing.Point(313, 282);
+            this.txtPointsAgainstWin11.Name = "txtPointsAgainstWin11";
+            this.txtPointsAgainstWin11.ReadOnly = true;
+            this.txtPointsAgainstWin11.Size = new System.Drawing.Size(244, 20);
+            this.txtPointsAgainstWin11.TabIndex = 14;
+            // 
+            // txtPointsAgainstWin21
+            // 
+            this.txtPointsAgainstWin21.Location = new System.Drawing.Point(605, 282);
+            this.txtPointsAgainstWin21.Name = "txtPointsAgainstWin21";
+            this.txtPointsAgainstWin21.ReadOnly = true;
+            this.txtPointsAgainstWin21.Size = new System.Drawing.Size(245, 20);
+            this.txtPointsAgainstWin21.TabIndex = 13;
+            // 
+            // txtWorstPlayerRecord21
+            // 
+            this.txtWorstPlayerRecord21.Location = new System.Drawing.Point(605, 166);
+            this.txtWorstPlayerRecord21.Name = "txtWorstPlayerRecord21";
+            this.txtWorstPlayerRecord21.ReadOnly = true;
+            this.txtWorstPlayerRecord21.Size = new System.Drawing.Size(245, 20);
+            this.txtWorstPlayerRecord21.TabIndex = 12;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(394, 42);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(45, 13);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "11 point";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(708, 42);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(50, 13);
+            this.label19.TabIndex = 10;
+            this.label19.Text = "21 points";
+            // 
+            // txtBestPlayerRecord21
+            // 
+            this.txtBestPlayerRecord21.Location = new System.Drawing.Point(605, 125);
+            this.txtBestPlayerRecord21.Name = "txtBestPlayerRecord21";
+            this.txtBestPlayerRecord21.ReadOnly = true;
+            this.txtBestPlayerRecord21.Size = new System.Drawing.Size(245, 20);
+            this.txtBestPlayerRecord21.TabIndex = 9;
+            // 
+            // txtOverallRecord21
+            // 
+            this.txtOverallRecord21.Location = new System.Drawing.Point(605, 86);
+            this.txtOverallRecord21.Name = "txtOverallRecord21";
+            this.txtOverallRecord21.ReadOnly = true;
+            this.txtOverallRecord21.Size = new System.Drawing.Size(245, 20);
+            this.txtOverallRecord21.TabIndex = 8;
+            // 
+            // txtWorstPlayerRecord11
+            // 
+            this.txtWorstPlayerRecord11.Location = new System.Drawing.Point(313, 166);
+            this.txtWorstPlayerRecord11.Name = "txtWorstPlayerRecord11";
+            this.txtWorstPlayerRecord11.ReadOnly = true;
+            this.txtWorstPlayerRecord11.Size = new System.Drawing.Size(244, 20);
+            this.txtWorstPlayerRecord11.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(167, 169);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 13);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Worst Record Against";
+            // 
+            // txtBestPlayerRecord11
+            // 
+            this.txtBestPlayerRecord11.Location = new System.Drawing.Point(313, 125);
+            this.txtBestPlayerRecord11.Name = "txtBestPlayerRecord11";
+            this.txtBestPlayerRecord11.ReadOnly = true;
+            this.txtBestPlayerRecord11.Size = new System.Drawing.Size(244, 20);
+            this.txtBestPlayerRecord11.TabIndex = 5;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(167, 125);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(133, 13);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Best Record Against (W-L)";
+            // 
+            // txtOverallRecord11
+            // 
+            this.txtOverallRecord11.Location = new System.Drawing.Point(313, 86);
+            this.txtOverallRecord11.Name = "txtOverallRecord11";
+            this.txtOverallRecord11.ReadOnly = true;
+            this.txtOverallRecord11.Size = new System.Drawing.Size(244, 20);
+            this.txtOverallRecord11.TabIndex = 3;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(167, 86);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(93, 13);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Record W-L (W%)";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(31, 28);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(36, 13);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Player";
+            // 
             // comboBox1
             // 
             this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.peopleBindingSource, "Name", true));
@@ -535,228 +744,19 @@
             this.comboBox1.ValueMember = "Name";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // tableTennisRankingsDataSet
-            // 
-            this.tableTennisRankingsDataSet.DataSetName = "TableTennisRankingsDataSet";
-            this.tableTennisRankingsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // peopleBindingSource
             // 
             this.peopleBindingSource.DataMember = "People";
             this.peopleBindingSource.DataSource = this.tableTennisRankingsDataSet;
             // 
+            // tableTennisRankingsDataSet
+            // 
+            this.tableTennisRankingsDataSet.DataSetName = "TableTennisRankingsDataSet";
+            this.tableTennisRankingsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // peopleTableAdapter
             // 
             this.peopleTableAdapter.ClearBeforeFill = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(31, 28);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(36, 13);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Player";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(160, 139);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(93, 13);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Record W-L (W%)";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // txtOverallRecord11
-            // 
-            this.txtOverallRecord11.Location = new System.Drawing.Point(306, 139);
-            this.txtOverallRecord11.Name = "txtOverallRecord11";
-            this.txtOverallRecord11.ReadOnly = true;
-            this.txtOverallRecord11.Size = new System.Drawing.Size(100, 20);
-            this.txtOverallRecord11.TabIndex = 3;
-            // 
-            // txtBestPlayerRecord11
-            // 
-            this.txtBestPlayerRecord11.Location = new System.Drawing.Point(306, 178);
-            this.txtBestPlayerRecord11.Name = "txtBestPlayerRecord11";
-            this.txtBestPlayerRecord11.ReadOnly = true;
-            this.txtBestPlayerRecord11.Size = new System.Drawing.Size(100, 20);
-            this.txtBestPlayerRecord11.TabIndex = 5;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(160, 178);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(133, 13);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "Best Record Against (W-L)";
-            // 
-            // txtWorstPlayerRecord11
-            // 
-            this.txtWorstPlayerRecord11.Location = new System.Drawing.Point(306, 219);
-            this.txtWorstPlayerRecord11.Name = "txtWorstPlayerRecord11";
-            this.txtWorstPlayerRecord11.ReadOnly = true;
-            this.txtWorstPlayerRecord11.Size = new System.Drawing.Size(100, 20);
-            this.txtWorstPlayerRecord11.TabIndex = 7;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(160, 222);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(111, 13);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "Worst Record Against";
-            // 
-            // txtOverallRecord21
-            // 
-            this.txtOverallRecord21.Location = new System.Drawing.Point(474, 139);
-            this.txtOverallRecord21.Name = "txtOverallRecord21";
-            this.txtOverallRecord21.ReadOnly = true;
-            this.txtOverallRecord21.Size = new System.Drawing.Size(100, 20);
-            this.txtOverallRecord21.TabIndex = 8;
-            // 
-            // txtBestPlayerRecord21
-            // 
-            this.txtBestPlayerRecord21.Location = new System.Drawing.Point(474, 178);
-            this.txtBestPlayerRecord21.Name = "txtBestPlayerRecord21";
-            this.txtBestPlayerRecord21.ReadOnly = true;
-            this.txtBestPlayerRecord21.Size = new System.Drawing.Size(100, 20);
-            this.txtBestPlayerRecord21.TabIndex = 9;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(497, 95);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(50, 13);
-            this.label19.TabIndex = 10;
-            this.label19.Text = "21 points";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(330, 95);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(45, 13);
-            this.label20.TabIndex = 11;
-            this.label20.Text = "11 point";
-            // 
-            // txtWorstPlayerRecord21
-            // 
-            this.txtWorstPlayerRecord21.Location = new System.Drawing.Point(474, 219);
-            this.txtWorstPlayerRecord21.Name = "txtWorstPlayerRecord21";
-            this.txtWorstPlayerRecord21.ReadOnly = true;
-            this.txtWorstPlayerRecord21.Size = new System.Drawing.Size(100, 20);
-            this.txtWorstPlayerRecord21.TabIndex = 12;
-            // 
-            // txtPointsAgainstWin21
-            // 
-            this.txtPointsAgainstWin21.Location = new System.Drawing.Point(474, 335);
-            this.txtPointsAgainstWin21.Name = "txtPointsAgainstWin21";
-            this.txtPointsAgainstWin21.ReadOnly = true;
-            this.txtPointsAgainstWin21.Size = new System.Drawing.Size(100, 20);
-            this.txtPointsAgainstWin21.TabIndex = 13;
-            // 
-            // txtPointsAgainstWin11
-            // 
-            this.txtPointsAgainstWin11.Location = new System.Drawing.Point(306, 335);
-            this.txtPointsAgainstWin11.Name = "txtPointsAgainstWin11";
-            this.txtPointsAgainstWin11.ReadOnly = true;
-            this.txtPointsAgainstWin11.Size = new System.Drawing.Size(100, 20);
-            this.txtPointsAgainstWin11.TabIndex = 14;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(160, 342);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(118, 13);
-            this.label21.TabIndex = 15;
-            this.label21.Text = "Avg Points Against Win";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(160, 383);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(102, 13);
-            this.label22.TabIndex = 16;
-            this.label22.Text = "Avg Points For Lose";
-            // 
-            // txtPointsLose11
-            // 
-            this.txtPointsLose11.Location = new System.Drawing.Point(306, 376);
-            this.txtPointsLose11.Name = "txtPointsLose11";
-            this.txtPointsLose11.ReadOnly = true;
-            this.txtPointsLose11.Size = new System.Drawing.Size(100, 20);
-            this.txtPointsLose11.TabIndex = 18;
-            // 
-            // txtPointsLose21
-            // 
-            this.txtPointsLose21.Location = new System.Drawing.Point(474, 376);
-            this.txtPointsLose21.Name = "txtPointsLose21";
-            this.txtPointsLose21.ReadOnly = true;
-            this.txtPointsLose21.Size = new System.Drawing.Size(100, 20);
-            this.txtPointsLose21.TabIndex = 17;
-            // 
-            // txtPointsAgainst11
-            // 
-            this.txtPointsAgainst11.Location = new System.Drawing.Point(306, 293);
-            this.txtPointsAgainst11.Name = "txtPointsAgainst11";
-            this.txtPointsAgainst11.ReadOnly = true;
-            this.txtPointsAgainst11.Size = new System.Drawing.Size(100, 20);
-            this.txtPointsAgainst11.TabIndex = 24;
-            this.txtPointsAgainst11.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
-            // 
-            // txtPointsAgainst21
-            // 
-            this.txtPointsAgainst21.Location = new System.Drawing.Point(474, 293);
-            this.txtPointsAgainst21.Name = "txtPointsAgainst21";
-            this.txtPointsAgainst21.ReadOnly = true;
-            this.txtPointsAgainst21.Size = new System.Drawing.Size(100, 20);
-            this.txtPointsAgainst21.TabIndex = 23;
-            this.txtPointsAgainst21.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(160, 300);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(133, 13);
-            this.label23.TabIndex = 22;
-            this.label23.Text = "Avg Points Scored Against";
-            this.label23.Click += new System.EventHandler(this.label23_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(160, 259);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(95, 13);
-            this.label24.TabIndex = 21;
-            this.label24.Text = "Avg Points Scored";
-            this.label24.Click += new System.EventHandler(this.label24_Click);
-            // 
-            // txtPoints11
-            // 
-            this.txtPoints11.Location = new System.Drawing.Point(306, 252);
-            this.txtPoints11.Name = "txtPoints11";
-            this.txtPoints11.ReadOnly = true;
-            this.txtPoints11.Size = new System.Drawing.Size(100, 20);
-            this.txtPoints11.TabIndex = 20;
-            this.txtPoints11.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
-            // 
-            // txtPoints21
-            // 
-            this.txtPoints21.Location = new System.Drawing.Point(474, 252);
-            this.txtPoints21.Name = "txtPoints21";
-            this.txtPoints21.ReadOnly = true;
-            this.txtPoints21.Size = new System.Drawing.Size(100, 20);
-            this.txtPoints21.TabIndex = 19;
-            this.txtPoints21.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
             // 
             // Form1
             // 
@@ -774,8 +774,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableTennisRankingsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peopleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableTennisRankingsDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
