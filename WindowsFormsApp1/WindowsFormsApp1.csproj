@@ -129,6 +129,10 @@
     <Compile Include="Migrations\201810252224095_Migration13.Designer.cs">
       <DependentUpon>201810252224095_Migration13.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810261159504_Migration14.cs" />
+    <Compile Include="Migrations\201810261159504_Migration14.Designer.cs">
+      <DependentUpon>201810261159504_Migration14.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchPerson.cs" />
@@ -188,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810252224095_Migration13.resx">
       <DependentUpon>201810252224095_Migration13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810261159504_Migration14.resx">
+      <DependentUpon>201810261159504_Migration14.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

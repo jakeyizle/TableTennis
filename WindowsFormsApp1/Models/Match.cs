@@ -13,6 +13,7 @@ namespace WindowsFormsApp1.Models
     {
         ElevenPoints,
         TwentyOnePoints,
+        Null,
     }
     public class Match
     {
@@ -39,7 +40,7 @@ namespace WindowsFormsApp1.Models
             {
                 WinningScore = Int32.Parse(scoreText[0]);
                 LosingScore = Int32.Parse(scoreText[1]);
-                if (WinningScore == 21)
+                if (WinningScore >= 21)
                 {
                     PointType = PointType.TwentyOnePoints;
                 }
@@ -47,6 +48,10 @@ namespace WindowsFormsApp1.Models
                 {
                     PointType = PointType.ElevenPoints;
                 }
+            }
+            else
+            {
+                PointType = PointType.Null;
             }
             Save();
             foreach (string name in names)
